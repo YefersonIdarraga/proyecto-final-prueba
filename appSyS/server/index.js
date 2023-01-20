@@ -1,7 +1,9 @@
 import express from 'express'
 import dataBase from './config/conexionDatabase.js'
-import ProductoRouter from './routes/RoutesProducto.js'
+import ClienteRouter from './routes/RoutesCliente.js'
 import cors from 'cors'
+import ProductoRouter from './routes/RoutesProducto.js'
+import CitaRouter from './routes/RouterCita.js'
 
 const app = express()
 const port = 3100
@@ -19,6 +21,8 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/productos', ProductoRouter)
+app.use('/clientes', ClienteRouter)
+app.use('/citas', CitaRouter)
 
 app.listen(port, ()=>{
   console.log(`Servidor corriendo en el puerto ${port}`)

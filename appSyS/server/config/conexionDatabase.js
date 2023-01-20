@@ -1,10 +1,13 @@
 import { Sequelize } from "sequelize";
 
 
-const dataBase = new Sequelize('sys', 'root', '', {
+const dataBase = new Sequelize('joly', 'root', '', {
   host: 'localhost',
   port: 3306,
-  dialect: "mysql"
+  dialect: "mysql",
+  define: {
+    timestamps: true
+  }
 })
 
 export default dataBase
